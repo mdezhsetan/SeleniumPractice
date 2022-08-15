@@ -3,17 +3,27 @@ package org.selenium4;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class Main {
-    public static void main(String[] args) {
+    public static WebDriver driver;
 
+    @BeforeTest
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://google.com");
+        driver = new ChromeDriver();
+    }
 
-        System.out.println("\n\n\n***************************************\n\nHello world!");
+    @Test
+    public void loginPage() {
+        driver.get("https://www.google.com/");
+        System.out.println(driver.getTitle());
+    }
 
-        driver.close();
+    @AfterTest
+    public void tearDown() {
         driver.quit();
     }
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 import java.time.Duration;
 import java.util.List;
@@ -15,9 +16,9 @@ public class Locators {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
         driver.get("https://ultimateqa.com/automation/");
     }
     public void tearDown() {
@@ -38,6 +39,16 @@ public class Locators {
         for (WebElement element : option){
             System.out.println(element.getText());
         }
+    }
+
+    public void findRelative(){
+        WebElement link = driver.findElement(By.linkText("Interactions with simple elements"));
+link.click();
+
+       WebElement btn = driver.findElement(By.name("et_builder_submit_button"));
+
+        driver.findElement(RelativeLocator.with(By.tagName("input")).above(btn)).sendKeys("ABCD");
+
     }
 
 }

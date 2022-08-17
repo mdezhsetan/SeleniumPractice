@@ -11,7 +11,8 @@ public class Main {
 
         locators.setUp();
 
-locators.findByLocators();
-
+        //locators.findByLocators();
+        locators.findRelative();
+        //locators.tearDown();
     }
 }

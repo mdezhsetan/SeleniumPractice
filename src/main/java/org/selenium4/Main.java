@@ -5,12 +5,13 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        BrowserActions ba = new BrowserActions();
-        ba.setUp();
-        // ba.changeUrl();
-        ba.frameSelection();
-        // ba.windowManagement();
-        ba.takeScreenshot();
+    public static void main(String[] args) throws InterruptedException {
+
+        Locators locators = new Locators();
+
+        locators.setUp();
+
+locators.findByLocators();
+
     }
 }

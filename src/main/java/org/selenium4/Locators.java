@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Locators {
     public static WebDriver driver;
+
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -21,6 +22,7 @@ public class Locators {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(100));
         driver.get("https://ultimateqa.com/automation/");
     }
+
     public void tearDown() {
         driver.quit();
     }
@@ -36,16 +38,16 @@ public class Locators {
 
         List<WebElement> option = driver.findElements(By.cssSelector("select"));
 
-        for (WebElement element : option){
+        for (WebElement element : option) {
             System.out.println(element.getText());
         }
     }
 
-    public void findRelative(){
+    public void findRelative() {
         WebElement link = driver.findElement(By.linkText("Interactions with simple elements"));
-link.click();
+        link.click();
 
-       WebElement btn = driver.findElement(By.name("et_builder_submit_button"));
+        WebElement btn = driver.findElement(By.name("et_builder_submit_button"));
 
         driver.findElement(RelativeLocator.with(By.tagName("input")).above(btn)).sendKeys("ABCD");
 

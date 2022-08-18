@@ -5,12 +5,14 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Locators locators = new Locators();
-        Waits wt = new Waits();
-        wt.setUp();
-        wt.fluentWaitMethod();
-        //locators.findByLocators();
-        //locators.findRelative();
-        //locators.tearDown();
+        Alerts alerts = new Alerts();
+        alerts.setUp();
+        alerts.jsAlert();
+        Thread.sleep(2000);
+        alerts.jsConfirm();
+        Thread.sleep((2000));
+        alerts.jsPrompt();
+        Thread.sleep(2000);
+        alerts.tearDown();
     }
 }

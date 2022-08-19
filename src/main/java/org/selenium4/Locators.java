@@ -38,9 +38,12 @@ public class Locators {
 
         List<WebElement> option = driver.findElements(By.cssSelector("select"));
 
-        for (WebElement element : option) {
+     /*   for (WebElement element : option) {
             System.out.println(element.getText());
-        }
+
+
+
+        }*/
     }
 
     public void findRelative() {
@@ -51,6 +54,10 @@ public class Locators {
 
         driver.findElement(RelativeLocator.with(By.tagName("input")).above(btn)).sendKeys("ABCD");
 
+    }
+
+    public void activeElements() {
+        System.out.println(driver.switchTo().activeElement().getText());
     }
 
 }

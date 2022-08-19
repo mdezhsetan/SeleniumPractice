@@ -5,10 +5,9 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        MouseActions mouseActions = new MouseActions();
-
-        mouseActions.setUp();
-        mouseActions.mouseActions();
-        mouseActions.tearDown();
+        DropDownHandling ddh = new DropDownHandling();
+        ddh.setUp();
+        ddh.dropDownHandling();
+        ddh.tearDown();
     }
 }

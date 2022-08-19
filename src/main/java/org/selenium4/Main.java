@@ -5,10 +5,10 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-MouseActions mouseActions = new MouseActions();
+        MouseActions mouseActions = new MouseActions();
 
-mouseActions.setUp();
-mouseActions.mouseActions();
-mouseActions.tearDown();
+        mouseActions.setUp();
+        mouseActions.mouseActions();
+        mouseActions.tearDown();
     }
 }
